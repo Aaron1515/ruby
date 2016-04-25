@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    talk_like_a_pirate (0.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  talk_like_a_pirate (~> 0.1.0)
+
+BUNDLED WITH
+   1.11.2
