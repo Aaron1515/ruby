@@ -2,10 +2,6 @@ require_relative 'helper.rb'
 require_relative 'error.rb'
 
 class PartyRepelledError < StandardError ; end
-class NoTreasureError < StandardError ; end
-class WhatBeThisError < StandardError ; end
-
-
 
 module Ship
 
