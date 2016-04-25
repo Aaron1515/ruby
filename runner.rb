@@ -1,7 +1,18 @@
-require_relative 'helper.rb'
-require_relative 'error.rb'
+require "talk_like_a_pirate"
 
+# Custom errors
 class PartyRepelledError < StandardError ; end
+class WhatBeThisError < StandardError
+  def initialize
+    super("'Ere, what be a 'symbol'")
+  end
+end
+
+class NoTreasureError < StandardError
+  def initialize
+    super("Ya! No treasure were found me 'earty!")
+  end
+end
 
 module Ship
 
@@ -40,5 +51,21 @@ class ShipWreck
   def sink!
   self.original_ship = "Ye Ship has been sank!"
   end
+end
 
+
+
+
+# Helper methods
+def piratize(normal_sentence)
+  words_to_remove = ["gold", "treasure", "coin", "coins"]
+
+  piratish =  TalkLikeAPirate.translate(normal_sentence)
+  arry_words = piratish.split - words_to_remove
+  return arry_words.join(" ")
+end
+
+def numberConverter(number)
+  top_num = number * 8
+  return top_num.round.to_s + "/8"
 end
