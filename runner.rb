@@ -1,4 +1,5 @@
 require_relative 'helper.rb'
+require_relative 'error.rb'
 
 class PartyRepelledError < StandardError ; end
 class NoTreasureError < StandardError ; end
@@ -12,6 +13,7 @@ module Ship
     @size = size
     @treasure = treasure
     @sunk = false
+    board!
   end
 
   def board! boarding_party
@@ -37,6 +39,10 @@ class ShipWreck
   def initialize ship
     @original_ship = ship
     ship.sink!
+  end
+
+  def sink!
+  self.original_ship = "Ye Ship has been sank!"
   end
 
 end

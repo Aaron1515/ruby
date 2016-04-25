@@ -3,9 +3,10 @@ require "talk_like_a_pirate"
 
 def piratize(normal_sentence)
   words_to_remove = ["gold", "treasure", "coin", "coins"]
-  arry_words = normal_sentence.split - words_to_remove
-  priate_talk = arry_words.join(" ")
-  return TalkLikeAPirate.translate(priate_talk)
+
+  piratish =  TalkLikeAPirate.translate(normal_sentence)
+  arry_words = piratish.split - words_to_remove
+  return arry_words.join(" ")
 end
 
 def numberConverter(number)

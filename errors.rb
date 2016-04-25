@@ -1,7 +1,11 @@
 class WhatBeThisError < StandardError
-  raise Argumenterror.new("'Ere, what be a 'symbol'")
+  def initialize
+    super("'Ere, what be a 'symbol'")
+  end
 end
 
 class NoTreasureError < StandardError
-  return Argumenterror.new("There's not Booty here!")
+  def initialize
+    super("Ya! No treasure were found me 'earty!")
+  end
 end
